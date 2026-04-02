@@ -10,9 +10,6 @@
     "entries": {
       "mom-companion": {
         "enabled": true
-      },
-      "anime-mom-companion": {
-        "enabled": true
       }
     }
   }
