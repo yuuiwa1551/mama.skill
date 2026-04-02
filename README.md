@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/mama-skill-banner.svg" alt="妈妈.skill" width="100%" />
+  <img src="./assets/mama-skill-cover.png" alt="妈妈.skill" width="100%" />
 </p>
 
 <h1 align="center">妈妈.skill</h1>
@@ -51,7 +51,11 @@
 
 ### OpenClaw
 
-直接复用 `mom-companion/` 目录；如果你的 OpenClaw 版本需要额外 manifest，可在此基础上再补一层适配。
+直接复用 `mom-companion/` 目录。OpenClaw 兼容这种 skill 目录结构；额外只需要在 `~/.openclaw/openclaw.json` 里把仓库目录加入 `skills.load.extraDirs`，并在 `skills.entries` 中启用它。
+
+仓库内已提供示例配置：
+
+- `examples/openclaw.example.jsonc`
 
 ## 使用
 
@@ -110,7 +114,11 @@ mama-skill/
 ├─ LICENSE
 ├─ .gitignore
 ├─ assets/
+│  ├─ mama-skill-cover.png
+│  ├─ mama-skill-social.png
 │  └─ mama-skill-banner.svg
+├─ examples/
+│  └─ openclaw.example.jsonc
 └─ mom-companion/
    ├─ SKILL.md
    ├─ agents/
@@ -126,6 +134,34 @@ mama-skill/
 - `mom-companion/agents/openai.yaml`：Claude Code / AgentSkills UI 元数据
 - `mom-companion/references/mother-profile-template.md`：妈妈素材采集模板
 - `mom-companion/references/skill-output-pack.md`：最终输出结构模板
+- `examples/openclaw.example.jsonc`：OpenClaw 配置示例
+- `assets/mama-skill-social.png`：可手动设置为 GitHub 仓库 Social Preview 的封面图
+
+### OpenClaw 配置示例
+
+把下面内容合并到你的 `~/.openclaw/openclaw.json`：
+
+```jsonc
+{
+  "skills": {
+    "load": {
+      "extraDirs": ["/absolute/path/to/mama.skill"]
+    },
+    "entries": {
+      "mom-companion": {
+        "enabled": true
+      }
+    }
+  }
+}
+```
+
+说明：
+
+- `extraDirs` 指向本仓库根目录，而不是 `mom-companion/` 子目录
+- `entries` 里的 key 默认就是技能名 `mom-companion`
+- 如果你把仓库放进共享 skills 目录，也可以不配 `extraDirs`，只保留 `entries`
+- `mom-companion/SKILL.md` 已补充 OpenClaw metadata，方便在支持的 UI 中展示 emoji 和主页
 
 ### 最佳使用方式
 

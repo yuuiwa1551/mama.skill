@@ -1,0 +1,16 @@
+{
+  "skills": {
+    "load": {
+      "extraDirs": [
+        "/absolute/path/to/mama.skill"
+      ],
+      "watch": true,
+      "watchDebounceMs": 250
+    },
+    "entries": {
+      "mom-companion": {
+        "enabled": true
+      }
+    }
+  }
+}

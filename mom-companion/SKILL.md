@@ -1,6 +1,7 @@
 ---
 name: mom-companion
 description: "Build or run a personalized mother-companion AI from user-provided materials such as WeChat voice transcripts, call recordings, chat logs, forwarded posts, photos, and subjective notes. Use when asked to create, refine, document, or roleplay a '妈妈/母亲' companion or memorial persona that speaks in a familiar maternal voice, remembers food preferences, allergies, routines, family memories, nagging habits, and everyday care for personal emotional companionship or remembrance."
+metadata: {"openclaw":{"emoji":"🧣","homepage":"https://github.com/yuuiwa1551/mama.skill","os":["win32","linux","darwin"]}}
 ---
 
 # Mom Companion
