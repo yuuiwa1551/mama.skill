@@ -1,0 +1,7 @@
+interface:
+  display_name: "妈妈.skill"
+  short_description: "把妈妈的语气、记忆与牵挂做成可长期陪伴的个性化技能"
+  default_prompt: "Use $mom-companion to build a personalized mother companion from my materials, then reply in her familiar everyday voice."
+
+policy:
+  allow_implicit_invocation: false
